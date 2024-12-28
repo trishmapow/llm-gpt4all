@@ -102,7 +102,7 @@ class Gpt4AllModel(llm.Model):
 
     def __init__(self, details):
         self._details = details
-        self.model_id = details["filename"].split(".")[0]
+        self.model_id = details["filename"].rsplit(".", maxsplit=1)[0]
 
     def prompt_template(self):
         return (
